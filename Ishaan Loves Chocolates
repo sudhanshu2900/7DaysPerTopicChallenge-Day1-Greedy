@@ -1,0 +1,29 @@
+PROBLEM:Input : arr[ ] = {5, 3, 1, 6, 9}
+Output : 1
+
+Explanation:
+            Initially: 5 3 1 6 9
+            In first step: 5 3 1 6
+            In Second step: 5 3 1
+            In Third step: 3 1
+            In Fourth step: 1
+            Return 1
+            
+SOLUTION:
+
+int chocolates(int arr[], int n)
+{
+    int minEle=INT_MAX;
+    for(int i=0;i<n;i++){
+        minEle=min(minEle, arr[i]);
+    }
+    return minEle;
+}
+
+
+
+
+
+
+
+
