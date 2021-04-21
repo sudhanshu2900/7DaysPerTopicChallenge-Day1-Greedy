@@ -1,0 +1,27 @@
+PROBLEM: A spider present at the bottom of the well of height H, needs to get out of it. The walls of the well are very slippery. 
+         In each step, it climbs U metres and slips down D metres. If in the last step, the spider gets out of the well by climbing 
+         U metres, it does not slip back. Find the number of steps the spider takes.
+         
+Input: H = 200, U = 50, D = 1
+Output: 5
+
+Explaination: 
+            First Step: 50 -1 = 49 
+            Second Step: 49 + 50 - 1 = 98 
+            Third Step: 98 + 50 - 1 = 147 
+            Fouth Step: 147 + 50 - 1 = 196
+            Fifth Step: Reach beyond H.
+            
+            
+SOLUTION:
+
+int minStep(int H, int U, int D){
+        int steps=1;
+        steps+=((H-D)/(U-D));
+        return steps;
+    }
+    
+    
+    
+    
+    
