@@ -1,0 +1,32 @@
+PROBLEM: N = 4
+         a[] = {4, 2, 1, 8}
+Output: 18
+
+Explanation: Rearrangement done is {1, 8, 2, 4}. Sum of absolute difference between consecutive elements after rearrangement = 
+|1 - 8| + |8 - 2| + |2 - 4| + |4 - 1| = 7 + 6 + 2 + 3 = 18.
+
+
+
+
+SOLUTION:
+
+long long int maxSum(int arr[], int n)
+{
+    long long int sum=0;
+    sort(arr, arr+n);
+    int a=0, b=n-1, cnt=1;
+    while(a<b){
+        sum+=abs(arr[a]-arr[b]);
+        cnt++;
+        if(cnt%2==0)
+            a++;
+        else
+            b--;
+    }
+    sum+=abs(arr[b]-arr[0]);
+    return sum;
+}
+
+
+
+
