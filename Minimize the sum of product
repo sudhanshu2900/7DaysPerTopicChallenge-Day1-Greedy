@@ -1,0 +1,34 @@
+Problem Link: https://practice.geeksforgeeks.org/problems/minimize-the-sum-of-product1525/0/?category[]=Greedy&category[]=Greedy&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]GreedyproblemStatusunsolveddifficulty[]-1page1category[]Greedy#
+______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+PROBLEM:
+You are given two arrays, A and B, of equal size N. The task is to find the minimum value of A[0] * B[0] + A[1] * B[1] +…+ A[N-1] * B[N-1], 
+where shuffling of elements of arrays A and B is allowed.
+
+
+Input:  N = 3 
+        A[] = {3, 1, 1}
+        B[] = {6, 5, 4}
+Output:23 
+
+Explanation: 1*6+1*5+3*4 = 6+5+12= 23 is the minimum sum.
+
+
+SOLUTION:
+
+long long int minValue(int a[], int b[], int n)
+    {
+        long long int sum=0;
+        sort(a, a+n);
+        sort(b, b+n, greater<int>());
+        for(int i=0;i<n;i++){
+            sum+=(a[i]*b[i]);
+        }
+        return sum;
+    }
+    
+    
+    
+    
+    
+    
